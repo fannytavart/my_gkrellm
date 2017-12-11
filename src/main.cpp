@@ -1,20 +1,19 @@
-#include <iostream>
-#include "ModuleNames.hpp"
+#include "MonitorDisplay.hpp"
 
-int			main(int argc, char **argv, char **env)
+int	main(int ac, char **av, char const **env)
 {
-  (void)argc;
-  (void)argv;
-  (void)env;
-
-  // std::list<IMonitorModule>	modules;
-  // int				lines = 0;
-
-  // for (std::list<IMonitorModule>::Iterator it = modules.begin() ; it != modules.end() ; ++it)
-  //   {
-  //     it->update();
-  //     lines += it->display(lines);
-  //   }
-
+  try
+    {
+      MonitorDisplay	*monitor = new MonitorDisplay(env);
+      (void)ac;
+      (void)av;
+      monitor->displayModules();
+      monitor->loopHandle();
+    }
+  catch (std::exception e)
+    {
+      std::cout << "Error: " << e.what() << std::endl;
+      return (1);
+    }
   return (0);
 }

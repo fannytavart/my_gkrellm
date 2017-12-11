@@ -10,7 +10,6 @@ MODULES_FILES	 = ModuleDateTime.cpp		\
 		   ModuleRAM.cpp		\
 		   ModuleCPU.cpp		\
 		   ModuleNames.cpp		\
-		   ModuleFly.cpp		\
 		   ModuleNetwork.cpp		\
 		   ModuleOS.cpp
 MODULES		 = $(addprefix $(MODULES_DIR), $(MODULES_FILES))
@@ -21,6 +20,7 @@ SRCS_FILES	 = AModuleText.cpp	\
 		   IMonitorModule.cpp	\
 		   MonitorDisplay.cpp	\
 		   ModuleElem.cpp	\
+		   main.cpp		\
 		   $(MODULES)
 SRCS		 = $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 

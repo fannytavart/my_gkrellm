@@ -11,7 +11,6 @@
 #include "ModuleCPU.hpp"
 #include "ModuleRAM.hpp"
 #include "ModuleNetwork.hpp"
-#include "ModuleFly.hpp"
 
 MonitorDisplay::MonitorDisplay(char const ** const &env)
 {
@@ -35,7 +34,6 @@ MonitorDisplay::MonitorDisplay(char const ** const &env)
   this->_moduleList.push_back(ModuleElem("CPU"));
   this->_moduleList.push_back(ModuleElem("RAM"));
   this->_moduleList.push_back(ModuleElem("NETWORK"));
-  this->_moduleList.push_back(ModuleElem("DAN'S FLY"));
 
   try
     {
@@ -45,7 +43,6 @@ MonitorDisplay::MonitorDisplay(char const ** const &env)
       this->_modules.push_back(new ModuleCPU());
       this->_modules.push_back(new ModuleRAM());
       this->_modules.push_back(new ModuleNetwork());
-      this->_modules.push_back(new ModuleFly());
     }
   catch (std::exception e)
     {
@@ -490,14 +487,4 @@ void		MonitorDisplay::loopHandle()
       std::this_thread::sleep_for(std::chrono::milliseconds(40));
     }
   endwin();
-}
-
-int	main(int ac, char **av, char const **env)
-{
-  MonitorDisplay	*monitor = new MonitorDisplay(env);
-  (void)ac;
-  (void)av;
-  monitor->displayModules();
-  monitor->loopHandle();
-  return (0);
 }
