@@ -1,6 +1,6 @@
 # my_gkrellm
 
-C++ monitoring program using ncurses library.
+C++ monitoring program using [ncurses](https://www.gnu.org/software/ncurses/) library.
 
 ## Requirements
 
